@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Cross-platform FlossWare AI installer. Artifact-first; Git is only used for explicit source fallback.
+# Cross-platform FlossWare installer. The setup repository uses an archive by default; capability dependencies are pinned Git references.
 set -euo pipefail
 
 AGENT="all"
@@ -31,7 +31,7 @@ Usage: ./scripts/install.sh [options]
   --help, -h          Show this help
 
 Supported platforms: Fedora/RHEL derivatives, Debian/Ubuntu, FreeBSD, Termux/Android.
-The normal path downloads published/package artifacts and a GitHub source archive; it does not clone repositories.
+The normal path downloads a GitHub source archive for loom-setup and installs its pinned capability dependencies; it does not clone the setup repository.
 Set FLOSSWARE_USE_SOURCE=true to explicitly use Git/source installation for development.
 Credentials are never copied or persisted by this installer.
 EOF
