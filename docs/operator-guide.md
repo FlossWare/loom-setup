@@ -80,7 +80,7 @@ Git is not required. A non-Git directory is a valid AI working directory.
 
 ```bash
 flossware-ai components
-flossware-ai components model-router-ai
+flossware-ai components model-gateway
 ```
 
 Capabilities can run as local libraries, through MCP, or as part of Loom. Loom is optional.
