@@ -44,9 +44,9 @@ def test_agent_registry_contains_expected_agents() -> None:
 def test_default_capabilities_include_core_stack() -> None:
     defaults = [name for name, _, selected in CAPABILITIES if selected]
     assert defaults == [
-        "model-router-ai",
-        "resilience-ai",
-        "structured-output-ai",
+        "model-gateway",
+        "resilience",
+        "output-validation",
     ]
 
 
