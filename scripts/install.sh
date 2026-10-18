@@ -146,7 +146,9 @@ else
   rm -rf "$SETUP_DIR"
   curl -fsSL "$SETUP_ARCHIVE" -o "$TMP_SETUP/setup.tar.gz"
   tar -xzf "$TMP_SETUP/setup.tar.gz" -C "$TMP_SETUP"
-  EXTRACTED="$(find "$TMP_SETUP" -mindepth 1 -maxdepth 1 -type d \( -name 'agent-setup-*' -o -name 'coding-agent-setup-*' \) -print -quit)"
+  # GitHub archive directory prefixes change when a repository is renamed.
+  # The temporary directory contains the archive plus its single extracted root.
+  EXTRACTED="$(find "$TMP_SETUP" -mindepth 1 -maxdepth 1 -type d -print -quit)"
   [[ -n "$EXTRACTED" ]] || fail "failed to unpack agent-setup artifact"
   mv "$EXTRACTED" "$SETUP_DIR"
 fi
