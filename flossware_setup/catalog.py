@@ -56,7 +56,7 @@ CAPABILITY_BY_ID: dict[str, tuple[str, str, bool]] = {c[0]: c for c in CAPABILIT
 CAPABILITY_REFS: dict[str, str] = {
     "model-gateway": "98ea2b3d27c483b7d77ad5770d097a79872c3785",
     "resilience": "d6253a6bc80941a02015c94c63c70c32d7cc0549",
-    "output-validation": "30f516721726b2df5894b01556dfd6869e3054b9",
+    "output-validation": "0b5e21dd9c94eb41a49eede6ba6d865a261707d2",
     "consensus": "4570e0429c4abee5a6b68d964786cb90e07282d8",
     "evaluation": "368c222f60a491e5022f8472d954c947bd47a9bf",
     "observability": "c4c563da098aa75d4789069fe523403fdd8bd9be",
