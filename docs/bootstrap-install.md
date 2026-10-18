@@ -1,13 +1,13 @@
 # Bootstrap installation
 
-`coding-agent-setup` is a consumer-facing installer. A normal user does **not** clone the Git repository.
+`loom-setup` is a consumer-facing installer. A normal user does **not** clone the Git repository.
 
 ## Quick start
 
 Linux, Fedora/RHEL, Debian-family systems, FreeBSD, and Termux use the public bootstrap path:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/FlossWare/agent-setup/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/FlossWare/loom-setup/main/install.sh | bash
 flossware-ai tui
 ```
 
@@ -18,9 +18,9 @@ The bootstrap is designed for an empty working directory. It obtains the selecte
 ```text
 public bootstrap
       |
-      +--> coding-agent-ai package artifact (when available)
+      +--> pinned capability dependencies from canonical FlossWare repositories
       |
-      +--> coding-agent-setup source archive for the selected ref
+      +--> loom-setup source archive for the selected ref
       |
       +--> managed virtual environment
       |
@@ -29,7 +29,7 @@ public bootstrap
       +--> discovery / doctor / dogfood
 ```
 
-The normal installation path does not require `git`, does not clone the repository, and does not leave a `.git` directory in the managed installation.
+The normal path downloads a source archive for `loom-setup` and installs its pinned capability dependencies. Git is required by pip for the Git-based capability references, but the installer does not create a Git checkout of `loom-setup` or leave repository metadata in the managed installation.
 
 ## Release selection
 
@@ -37,7 +37,7 @@ The bootstrap defaults to `main` until a formal stable release channel is establ
 
 ```bash
 FLOSSWARE_RELEASE_REF=<tag-or-branch> \
-  curl -fsSL https://raw.githubusercontent.com/FlossWare/agent-setup/main/install.sh | bash
+  curl -fsSL https://raw.githubusercontent.com/FlossWare/loom-setup/main/install.sh | bash
 ```
 
 Use a release/tag rather than a moving branch when reproducibility is required.
@@ -47,8 +47,8 @@ Use a release/tag rather than a moving branch when reproducibility is required.
 Only contributors who intentionally need editable source installation should use a checkout:
 
 ```bash
-git clone https://github.com/FlossWare/coding-agent-setup.git
-cd coding-agent-setup
+git clone https://github.com/FlossWare/loom-setup.git
+cd loom-setup
 FLOSSWARE_USE_SOURCE=true ./scripts/install.sh
 ```
 
