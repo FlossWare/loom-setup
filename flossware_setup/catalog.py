@@ -62,7 +62,7 @@ CAPABILITY_REFS: dict[str, str] = {
     "observability": "c4c563da098aa75d4789069fe523403fdd8bd9be",
     "security": "79c11558f39e966f15d0c50a955acded2e252f32",
     "rag": "8bc0f6ae899b39ae6708c7b158d82529adbc2209",
-    "optimization": "c31a386758f93228655c19e85cb8f5ff827f7844",
+    "optimization": "3044c7cdb88a2aa4b6278b35ec92d8a61b79d5f3",
 }
 
 BUDGET_POLICIES: tuple[tuple[str, str, float, str], ...] = (
