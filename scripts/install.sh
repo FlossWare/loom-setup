@@ -10,10 +10,8 @@ CLEAN=false
 INSTALL_ROOT="${FLOSSWARE_AI_HOME:-${FLOSSWARE_INSTALL_ROOT:-$HOME/.FlossWare/ai}}"
 VENV="$INSTALL_ROOT/venv"
 SETUP_DIR="$INSTALL_ROOT/agent-setup"
-AI_REPO="https://github.com/FlossWare/agent-ai.git"
 SETUP_REPO="https://github.com/FlossWare/agent-setup.git"
 RELEASE_REF="${FLOSSWARE_RELEASE_REF:-main}"
-AI_REF="${FLOSSWARE_AI_REF:-main}"
 USE_SOURCE="${FLOSSWARE_USE_SOURCE:-false}"
 
 if [[ "$RELEASE_REF" =~ ^[0-9a-f]{40}$ ]]; then
@@ -124,13 +122,6 @@ source "$VENV/bin/activate"
 python -m pip install --upgrade pip setuptools wheel fastmcp
 
 if [[ "$USE_SOURCE" == true ]]; then
-  python -m pip install --upgrade "agent-ai[all,tui] @ git+$AI_REPO@$AI_REF"
-else
-  python -m pip install --upgrade --prefer-binary "agent-ai[all,tui]" \
-    || python -m pip install --upgrade "agent-ai[all,tui] @ git+$AI_REPO@$AI_REF"
-fi
-
-if [[ "$USE_SOURCE" == true ]]; then
   if [[ -d "$SETUP_DIR/.git" ]]; then
     git -C "$SETUP_DIR" fetch --force --depth 1 origin "$RELEASE_REF"
     git -C "$SETUP_DIR" checkout --force FETCH_HEAD
@@ -159,7 +150,7 @@ done
 
 [[ "$PROFILE" == "default" || -f "$SETUP_DIR/profiles/$PROFILE.toml" ]] || fail "profile '$PROFILE' is not defined; refusing to substitute the neutral default profile"
 python -m compileall -q "$SETUP_DIR/scripts/setup.py" "$SETUP_DIR/scripts/tui.py" "$SETUP_DIR/scripts/agent_setup.py" "$SETUP_DIR/scripts/router_mcp.py" "$SETUP_DIR/scripts/discovery.py" "$SETUP_DIR/scripts/mcp.py" "$SETUP_DIR/scripts/runtime.py" "$SETUP_DIR/scripts/dogfood.py"
-"$VENV/bin/python" -m pip install -e "$SETUP_DIR" --quiet || fail "failed to install agent-setup package into managed venv"
+"$VENV/bin/python" -m pip install -e "$SETUP_DIR[all]" --quiet || fail "failed to install loom-setup and its selected capability dependencies into managed venv"
 
 PROFILE_DIR="$INSTALL_ROOT/config/profiles/$PROFILE"
 mkdir -p "$PROFILE_DIR" "$INSTALL_ROOT/bin" "$INSTALL_ROOT/state" "$INSTALL_ROOT/cache" "$INSTALL_ROOT/mcp"
