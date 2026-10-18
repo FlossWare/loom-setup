@@ -40,6 +40,8 @@ def main() -> int:
     lines = ["".join(row) for row in screen.display]
     text = "\n".join(lines)
     if "Profiles" not in text or "Configuration" not in text or "READY" not in text:
+        print("Captured TUI screen for diagnosis:")
+        print(text)
         raise SystemExit("Live TUI capture did not contain expected main-screen markers")
 
     bg = "#000000"
