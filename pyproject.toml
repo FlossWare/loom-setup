@@ -28,7 +28,7 @@ flossware-ai = "flossware_setup.cli:main"
 core = [
     "model-router-ai @ git+https://github.com/FlossWare/model-gateway.git@98ea2b3d27c483b7d77ad5770d097a79872c3785",
     "resilience-ai @ git+https://github.com/FlossWare/resilience-ai.git@b4a11f80bfe4b9a879b95b724d143d92cb548c47",
-    "output-validation @ git+https://github.com/FlossWare/output-validation.git@7ab3b961fa7e49beb26031b572bded8f9cade275",
+    "output-validation @ git+https://github.com/FlossWare/output-validation.git@6bc6e3621777dd826e0d6b3ad05bb29bbb6e72b6",
 ]
 all = [
     "model-router-ai @ git+https://github.com/FlossWare/model-gateway.git@98ea2b3d27c483b7d77ad5770d097a79872c3785",
@@ -39,7 +39,7 @@ all = [
     "observability-ai @ git+https://github.com/FlossWare/observability.git@c4c563da098aa75d4789069fe523403fdd8bd9be",
     "security-ai @ git+https://github.com/FlossWare/security.git@79c11558f39e966f15d0c50a955acded2e252f32",
     "rag-ai @ git+https://github.com/FlossWare/rag.git@8bc0f6ae899b39ae6708c7b158d82529adbc2209",
-    "optimization @ git+https://github.com/FlossWare/optimization.git@cb70cdf828de74bc71ffba7fb2252e0f26030903",
+    "optimization @ git+https://github.com/FlossWare/optimization.git@c31a386758f93228655c19e85cb8f5ff827f7844",
 ]
 
 [project.urls]
