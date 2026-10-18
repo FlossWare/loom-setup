@@ -2,7 +2,7 @@
 # Canonical FlossWare AI bootstrap entry point.
 #
 # Consumer path (no clone required):
-#   curl -fsSL https://raw.githubusercontent.com/FlossWare/agent-setup/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/FlossWare/loom-setup/main/install.sh | bash
 #
 # Local checkout path:
 #   ./install.sh
@@ -13,7 +13,7 @@
 set -euo pipefail
 
 REF="${FLOSSWARE_RELEASE_REF:-main}"
-REPO="${FLOSSWARE_SETUP_REPO:-FlossWare/agent-setup}"
+REPO="${FLOSSWARE_SETUP_REPO:-FlossWare/loom-setup}"
 
 # When this file lives in a repository checkout, prefer the in-tree installer.
 # BASH_SOURCE is empty under some `curl | bash` invocations; guard accordingly.
