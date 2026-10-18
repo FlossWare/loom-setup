@@ -56,13 +56,13 @@ CAPABILITY_BY_ID: dict[str, tuple[str, str, bool]] = {c[0]: c for c in CAPABILIT
 CAPABILITY_REFS: dict[str, str] = {
     "model-gateway": "98ea2b3d27c483b7d77ad5770d097a79872c3785",
     "resilience": "d6253a6bc80941a02015c94c63c70c32d7cc0549",
-    "output-validation": "7ab3b961fa7e49beb26031b572bded8f9cade275",
+    "output-validation": "6bc6e3621777dd826e0d6b3ad05bb29bbb6e72b6",
     "consensus": "4570e0429c4abee5a6b68d964786cb90e07282d8",
     "evaluation": "368c222f60a491e5022f8472d954c947bd47a9bf",
     "observability": "c4c563da098aa75d4789069fe523403fdd8bd9be",
     "security": "79c11558f39e966f15d0c50a955acded2e252f32",
     "rag": "8bc0f6ae899b39ae6708c7b158d82529adbc2209",
-    "optimization": "7ccb39fd0070d3e397b691a4060f9a235e4ca7b3",
+    "optimization": "c31a386758f93228655c19e85cb8f5ff827f7844",
 }
 
 BUDGET_POLICIES: tuple[tuple[str, str, float, str], ...] = (
