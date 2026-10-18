@@ -29,7 +29,7 @@ def test_root_install_sh_is_not_recovery_wrapper() -> None:
     assert "RECOVERY_REF" not in text
     assert "e9a4b2692d66cc7c4f9285516ef5eaa1a174cc67" not in text
     assert "scripts/install.sh" in text
-    assert "FlossWare/agent-setup" in text
+    assert "FlossWare/loom-setup" in text
     # Local checkout path must exec the in-tree installer.
     assert "scripts/install.sh" in text
     assert "exec bash" in text
@@ -37,12 +37,12 @@ def test_root_install_sh_is_not_recovery_wrapper() -> None:
 
 def test_scripts_install_uses_canonical_repo_urls() -> None:
     text = INSTALLER.read_text(encoding="utf-8")
-    assert "github.com/FlossWare/agent-setup" in text
-    assert "codeload.github.com/FlossWare/agent-setup" in text
-    assert 'AI_REPO="https://github.com/FlossWare/agent-ai.git"' in text
+    assert "github.com/FlossWare/loom-setup" in text
+    assert "codeload.github.com/FlossWare/loom-setup" in text
     assert "coding-agent-ai.git" not in text
     # Historical install path name remains for managed layout compatibility.
-    assert "coding-agent-setup" in text
+    assert 'SETUP_DIR="$INSTALL_ROOT/agent-setup"' in text
+    assert "agent-ai[all,tui]" not in text
 
 
 def test_local_bootstrap_delegates_to_scripts_install_help() -> None:
