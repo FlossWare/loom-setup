@@ -22,7 +22,6 @@ if [[ -n "$_SOURCE" && "$_SOURCE" != "bash" && "$_SOURCE" != "-" ]]; then
   _HERE="$(cd "$(dirname "$_SOURCE")" && pwd)"
   if [[ -f "$_HERE/scripts/install.sh" ]]; then
     export FLOSSWARE_RELEASE_REF="$REF"
-    export FLOSSWARE_AI_REF="${FLOSSWARE_AI_REF:-main}"
     exec bash "$_HERE/scripts/install.sh" "$@"
   fi
 fi
@@ -37,5 +36,4 @@ if ! curl --proto "=https" --tlsv1.2 -fsSL "$INSTALLER_URL" -o "$TMP_DIR/install
 fi
 chmod +x "$TMP_DIR/install.sh"
 export FLOSSWARE_RELEASE_REF="$REF"
-export FLOSSWARE_AI_REF="${FLOSSWARE_AI_REF:-main}"
 exec bash "$TMP_DIR/install.sh" "$@"
