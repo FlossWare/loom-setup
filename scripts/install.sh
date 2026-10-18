@@ -150,7 +150,7 @@ done
 
 [[ "$PROFILE" == "default" || -f "$SETUP_DIR/profiles/$PROFILE.toml" ]] || fail "profile '$PROFILE' is not defined; refusing to substitute the neutral default profile"
 python -m compileall -q "$SETUP_DIR/scripts/setup.py" "$SETUP_DIR/scripts/tui.py" "$SETUP_DIR/scripts/agent_setup.py" "$SETUP_DIR/scripts/router_mcp.py" "$SETUP_DIR/scripts/discovery.py" "$SETUP_DIR/scripts/mcp.py" "$SETUP_DIR/scripts/runtime.py" "$SETUP_DIR/scripts/dogfood.py"
-"$VENV/bin/python" -m pip install -e "$SETUP_DIR[all]" --quiet || fail "failed to install loom-setup and its selected capability dependencies into managed venv"
+(cd "$SETUP_DIR" && "$VENV/bin/python" -m pip install -e ".[all]" --quiet) || fail "failed to install loom-setup and its selected capability dependencies into managed venv"
 
 PROFILE_DIR="$INSTALL_ROOT/config/profiles/$PROFILE"
 mkdir -p "$PROFILE_DIR" "$INSTALL_ROOT/bin" "$INSTALL_ROOT/state" "$INSTALL_ROOT/cache" "$INSTALL_ROOT/mcp"
