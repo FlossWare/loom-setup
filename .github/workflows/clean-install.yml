@@ -40,7 +40,7 @@ jobs:
           test ! -e .git
           curl --proto "=https" --tlsv1.2 -fsSL "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${FLOSSWARE_RELEASE_REF}/scripts/install.sh" -o install.sh
           chmod +x install.sh
-          grep -Fq 'pip install -e "$SETUP_DIR[all]"' install.sh
+          grep -Fq 'pip install -e ".[all]"' install.sh
           ! grep -q 'agent-ai\[all,tui\]' install.sh
           ./install.sh --profile default
           test ! -d /tmp/flossware-ai/agent-setup/.git
