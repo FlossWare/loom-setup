@@ -28,7 +28,7 @@ flossware-ai = "flossware_setup.cli:main"
 core = [
     "model-router-ai @ git+https://github.com/FlossWare/model-gateway.git@98ea2b3d27c483b7d77ad5770d097a79872c3785",
     "resilience-ai @ git+https://github.com/FlossWare/resilience-ai.git@b4a11f80bfe4b9a879b95b724d143d92cb548c47",
-    "output-validation @ git+https://github.com/FlossWare/output-validation.git@6bc6e3621777dd826e0d6b3ad05bb29bbb6e72b6",
+    "output-validation @ git+https://github.com/FlossWare/output-validation.git@30f516721726b2df5894b01556dfd6869e3054b9",
 ]
 all = [
     "model-router-ai @ git+https://github.com/FlossWare/model-gateway.git@98ea2b3d27c483b7d77ad5770d097a79872c3785",
