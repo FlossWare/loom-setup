@@ -33,7 +33,6 @@ jobs:
         env:
           FLOSSWARE_INSTALL_ROOT: /tmp/flossware-ai
           FLOSSWARE_RELEASE_REF: ${{ github.event.pull_request.head.sha || github.sha }}
-          FLOSSWARE_AI_REF: main
         run: |
           set -euxo pipefail
           mkdir -p /workspace/empty-home
@@ -41,7 +40,8 @@ jobs:
           test ! -e .git
           curl --proto "=https" --tlsv1.2 -fsSL "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${FLOSSWARE_RELEASE_REF}/scripts/install.sh" -o install.sh
           chmod +x install.sh
-          grep -q 'AI_REF="${FLOSSWARE_AI_REF:-main}"' install.sh
+          grep -q 'pip install -e "$SETUP_DIR[all]"' install.sh
+          ! grep -q 'agent-ai\[all,tui\]' install.sh
           ./install.sh --profile default
           test ! -d /tmp/flossware-ai/agent-setup/.git
           test -f /tmp/flossware-ai/agent-setup/profiles/default.toml
@@ -73,7 +73,6 @@ jobs:
         env:
           FLOSSWARE_INSTALL_ROOT: /tmp/flossware-source
           FLOSSWARE_RELEASE_REF: ${{ github.event.pull_request.head.sha || github.sha }}
-          FLOSSWARE_AI_REF: main
           FLOSSWARE_USE_SOURCE: "true"
         run: |
           set -euxo pipefail
@@ -89,7 +88,6 @@ jobs:
         env:
           FLOSSWARE_INSTALL_ROOT: /tmp/flossware-ai
           FLOSSWARE_RELEASE_REF: ${{ github.event.pull_request.head.sha || github.sha }}
-          FLOSSWARE_AI_REF: main
         run: |
           set -euxo pipefail
           cd /workspace/empty-home
