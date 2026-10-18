@@ -10,14 +10,14 @@ CLEAN=false
 INSTALL_ROOT="${FLOSSWARE_AI_HOME:-${FLOSSWARE_INSTALL_ROOT:-$HOME/.FlossWare/ai}}"
 VENV="$INSTALL_ROOT/venv"
 SETUP_DIR="$INSTALL_ROOT/agent-setup"
-SETUP_REPO="https://github.com/FlossWare/agent-setup.git"
+SETUP_REPO="https://github.com/FlossWare/loom-setup.git"
 RELEASE_REF="${FLOSSWARE_RELEASE_REF:-main}"
 USE_SOURCE="${FLOSSWARE_USE_SOURCE:-false}"
 
 if [[ "$RELEASE_REF" =~ ^[0-9a-f]{40}$ ]]; then
-  SETUP_ARCHIVE="https://codeload.github.com/FlossWare/agent-setup/tar.gz/$RELEASE_REF"
+  SETUP_ARCHIVE="https://codeload.github.com/FlossWare/loom-setup/tar.gz/$RELEASE_REF"
 else
-  SETUP_ARCHIVE="https://codeload.github.com/FlossWare/agent-setup/tar.gz/refs/heads/$RELEASE_REF"
+  SETUP_ARCHIVE="https://codeload.github.com/FlossWare/loom-setup/tar.gz/refs/heads/$RELEASE_REF"
 fi
 
 usage() {
