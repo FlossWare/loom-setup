@@ -38,7 +38,7 @@ all = [
     "evaluation-ai @ git+https://github.com/FlossWare/evaluation.git@368c222f60a491e5022f8472d954c947bd47a9bf",
     "observability-ai @ git+https://github.com/FlossWare/observability.git@c4c563da098aa75d4789069fe523403fdd8bd9be",
     "security-ai @ git+https://github.com/FlossWare/security.git@79c11558f39e966f15d0c50a955acded2e252f32",
-    "rag-ai @ git+https://github.com/FlossWare/rag.git@8bc0f6ae899b39ae6708c7b158d82529adbc2209",
+    "rag @ git+https://github.com/FlossWare/rag.git@8bc0f6ae899b39ae6708c7b158d82529adbc2209",
     "optimization @ git+https://github.com/FlossWare/optimization.git@c31a386758f93228655c19e85cb8f5ff827f7844",
 ]
 
