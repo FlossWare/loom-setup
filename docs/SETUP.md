@@ -148,7 +148,7 @@ Useful commands include:
 flossware-ai agents
 flossware-ai agents setup crush
 flossware-ai components
-flossware-ai components model-router-ai
+flossware-ai components model-gateway
 flossware-ai accounts --verify
 flossware-ai models --refresh
 flossware-ai providers
