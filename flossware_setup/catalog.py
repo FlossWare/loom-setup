@@ -40,29 +40,29 @@ AGENTS: tuple[AgentAdapter, ...] = (
 AGENT_BY_ID: dict[str, AgentAdapter] = {a.id: a for a in AGENTS}
 
 CAPABILITIES: tuple[tuple[str, str, bool], ...] = (
-    ("model-router-ai", "LLM routing, provider failover, capability and cost awareness", True),
-    ("resilience-ai", "Retry, circuit breakers, timeouts", True),
-    ("structured-output-ai", "Schema-validated model output", True),
-    ("consensus-ai", "Multi-model voting", False),
-    ("evaluation-ai", "Quality scoring and adversarial verification", False),
-    ("observability-ai", "Structured logging, metrics, cost tracking", False),
-    ("security-ai", "Validation, secret masking, audit logging", False),
-    ("rag-ai", "Document retrieval and hybrid search", False),
-    ("genetic-optimizer-ai", "Genetic optimization and task tuning", False),
+    ("model-gateway", "LLM routing, provider failover, capability and cost awareness", True),
+    ("resilience", "Retry, circuit breakers, timeouts", True),
+    ("output-validation", "Schema-validated model output", True),
+    ("consensus", "Multi-model voting", False),
+    ("evaluation", "Quality scoring and adversarial verification", False),
+    ("observability", "Structured logging, metrics, cost tracking", False),
+    ("security", "Validation, secret masking, audit logging", False),
+    ("rag", "Document retrieval and hybrid search", False),
+    ("optimization", "Genetic optimization", False),
 )
 
 CAPABILITY_BY_ID: dict[str, tuple[str, str, bool]] = {c[0]: c for c in CAPABILITIES}
 
 CAPABILITY_REFS: dict[str, str] = {
-    "model-router-ai": "e35f2cca34a34683a7a02b74d673012f122279c1",
-    "resilience-ai": "b4a11f80bfe4b9a879b95b724d143d92cb548c47",
-    "structured-output-ai": "9584f13877afa60307a9f9bca950caef0ff3b542",
-    "consensus-ai": "8a7c76893b76b26e097dffe4db578b64f0238996",
-    "evaluation-ai": "790d56dfb87c704a215253c94ee97408cc3dba51",
-    "observability-ai": "f2bf65b8d2318594727d6e7641eba897b07f201a",
-    "security-ai": "7a19820af85af14818773ba579e42d8943654365",
-    "rag-ai": "3534aa7abab46c86cfc75366c6143a346851bc74",
-    "genetic-optimizer-ai": "8362844a46d7bbe26dcbff769c349ad24f863b7c",
+    "model-gateway": "98ea2b3d27c483b7d77ad5770d097a79872c3785",
+    "resilience": "d6253a6bc80941a02015c94c63c70c32d7cc0549",
+    "output-validation": "7ab3b961fa7e49beb26031b572bded8f9cade275",
+    "consensus": "4570e0429c4abee5a6b68d964786cb90e07282d8",
+    "evaluation": "368c222f60a491e5022f8472d954c947bd47a9bf",
+    "observability": "c4c563da098aa75d4789069fe523403fdd8bd9be",
+    "security": "79c11558f39e966f15d0c50a955acded2e252f32",
+    "rag": "8bc0f6ae899b39ae6708c7b158d82529adbc2209",
+    "optimization": "7ccb39fd0070d3e397b691a4060f9a235e4ca7b3",
 }
 
 BUDGET_POLICIES: tuple[tuple[str, str, float, str], ...] = (
@@ -74,7 +74,7 @@ BUDGET_POLICIES: tuple[tuple[str, str, float, str], ...] = (
 
 BUDGET_BY_ID: dict[str, tuple[str, str, float, str]] = {b[0]: b for b in BUDGET_POLICIES}
 
-# Keep this catalog synchronized with model-router-ai's provider definitions.
+# Keep this catalog synchronized with model-gateway's provider definitions.
 # This metadata catalog must include Anthropic so ANTHROPIC_API_KEY and Claude
 # models are visible to the setup UI. It never reads or stores secret values.
 PROVIDERS: tuple[tuple[str, str, str], ...] = (
