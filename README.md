@@ -36,7 +36,7 @@ Client-specific configuration is intentionally outside this repository. `loom-cl
 
 ## Migration note
 
-This repository replaces the former `agent-setup` boundary. New documentation, commands, package names, and references should use **Loom** terminology. Historical `agent-ai`/`agent-setup` references are migration compatibility only.
+This repository replaces the former `agent-setup` repository boundary. New documentation, repository links, and capability IDs use **Loom** terminology. The Python distribution still uses the legacy `agent-setup` name for compatibility; changing that published distribution name is a separate migration.
 
 ## Development
 
